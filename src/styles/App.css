@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+nav{
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+  background-color: rgb(116, 140, 252);
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+}
+
+li{
+  display: inline;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li:hover{
+  background-color: rgb(170, 178, 250);
+} */

@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import './styles/App.css';
+import {Route, Switch, Link} from 'react-router-dom';
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+
+export const AppContext = React.createContext();
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <AppContext.Provider value={{isLoading, setIsLoading}}>
+    <div className='App'>
+      
+      <Switch>
+        <Route path='/' exact={true} component={Home}/>
+        <Route path='/login' component={Login}/>
+        <Route path='/signup' component={Signup}/>
+      </Switch>
     </div>
+    </AppContext.Provider>
   );
 }
 
