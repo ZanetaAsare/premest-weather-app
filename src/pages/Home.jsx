@@ -66,6 +66,7 @@ function Home(){
                         <img src={weatherIcon} alt='Weather Icon'/>
                         {/* <p className='description'>Cloudy with little rain drops</p> */}
                     </div>
+                    <p className="description">Description: {weatherData.weather ? weatherData.weather[0].description : ""}</p>
                     <div className="weekWeatherInfo">
                         <div className="weather-info">
                             <h5>MON</h5>
@@ -92,16 +93,7 @@ function Home(){
                             <img src={weatherIcon5} alt='Weather Info 5'/>
                             <p>12&deg;</p>
                         </div>
-                        <div className="weather-info">
-                            <h5>SAT</h5>
-                            <img src={weatherIcon6} alt='Weather Info 6'/>
-                            <p>12&deg;</p>
-                        </div>
-                        <div className="weather-info">
-                            <h5>SUN</h5>
-                            <img src={weatherIcon7} alt='Weather Info 7'/>
-                            <p>12&deg;</p>
-                        </div>
+                        
                     </div>
                 </div>
                 <div className="right"></div>
