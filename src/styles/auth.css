@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
 }
 .auth {
     /*border: 1px solid black;*/
@@ -26,12 +26,18 @@
     outline: none;
     padding: 9px 12px;
     border-radius: 5px;
+    text-align: center;
 }
 .auth button {
     border: none;
     outline: none;
-    background-color: #5389a6;
+    background-color:#813638;
     color: #fff;
-    padding: 9px 45px;
+    padding: 5px 20px;
     border-radius: 5px;
+}
+
+#auth-link{
+    text-decoration: none;
+    color:#813638;
 }

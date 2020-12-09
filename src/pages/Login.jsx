@@ -1,29 +1,21 @@
-<<<<<<< HEAD
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import '../styles/auth.css';    
+import { Link, useHistory } from 'react-router-dom';
+import { AppContext } from '../App.js'
+
+
 
 function Login(){
-    return(
-        <div className='auth-container'>
-            <h1>Login</h1>
-            <form className='auth'>
-                <input type='email' placeholder='Email' />
-                <input type='password' placeholder='Password' />
-                <button>Login</button>
-            </form>
-        </div>
-=======
-import React, {useState, createContext} from 'react';
-import '../styles/auth.css';    
+    const app_context = useContext(AppContext)
+    let redirect = useHistory();
 
-export const UserContext = createContext();
-
-function Login(){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
+
     const handleUsernameOnChange = (e) => {
         setUsername(e.target.value)
+        // app_context.setUsername(e.target.value)
     }
 
     const handlePasswordOnChange = (e) => {
@@ -37,29 +29,34 @@ function Login(){
             let info = JSON.parse(localStorage.getItem(`${username}`))
             
             if (info['password'] === password){
-                sessionStorage.setItem(`${username}`, true)
+                // sessionStorage.setItem('isLoggedIn', true)
+                app_context.setIsLoggedIn(true)
                 alert('Login Successful')
+                setUsername('')
+                setPassword('')
+                redirect.push('/search')
 
             }else{
+                alert('Invalid Login')
                 console.log('Invalid login')
             }
         }else{
+            alert('Invalid Login')
             console.log('Invalid login')
         }
     }
-    console.log(username)
+ 
     return(
-        <UserContext.Provider value={{username}}>
+    
         <div className='auth-container'>
             <h1>Login</h1>
             <form className='auth' onSubmit={handleFormOnSubmit}>
                 <input type='text' placeholder='Username' value={username} onChange={handleUsernameOnChange}/>
                 <input type='password' placeholder='Password' value={password} onChange={handlePasswordOnChange} />
-                <button>Login</button>
+                <button>Login</button><br/><br/>
+                <p>Don't Have An Account? <Link to='/signup' id='auth-link'>Sign Up</Link></p>
             </form>
         </div>
-        </UserContext.Provider>
->>>>>>> 65f6e3a (Added login and signup functionality, further styling)
     )
 }
 

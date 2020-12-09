@@ -1,9 +1,5 @@
 .currentWeatherInfo{
-<<<<<<< HEAD
-    padding: 72px 0 84px;
-=======
     padding: 10px 0;
->>>>>>> 65f6e3a (Added login and signup functionality, further styling)
     display: flex;
 }
 
@@ -11,29 +7,10 @@
     font-size: 96px;
     font-weight: 200;
     margin-right: 50px;
+    color: #813638;
 }
 
-<<<<<<< HEAD
-.weekWeatherInfo{
-    display: flex;
-}
 
-.weather-info{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.weather-info:hover{
-    box-shadow: 2px 0px 45px -1px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-}
-
-.weather-info p, .weather-info h5{
-    font-weight: 200;
-    font-size: 18px;
-=======
 /* .weather-info:hover{
     box-shadow: 2px 0px 45px -1px rgba(0, 0, 0, 0.25);
     cursor: pointer;
@@ -76,5 +53,16 @@
 
 .weather-details p > span{
     padding-right: 20px;
->>>>>>> 65f6e3a (Added login and signup functionality, further styling)
+
+}
+
+#history-title{
+    text-align: center;
+    padding-top: 40px;
+    /* margin-top: 30px; */
+}
+
+#city-name{
+    color: #813638;
+
 }
