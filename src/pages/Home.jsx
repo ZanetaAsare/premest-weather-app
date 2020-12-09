@@ -10,9 +10,6 @@ const APP_ID = '0474653fe0c62e70c9b16c7b1f8f0542';
 function Home(){
     const [weatherData, setWeatherData] = useState({});
 
-  
-
-
     const getCurrentWeather = (coords) => {
         if (coords.latitude !== undefined) {
                 axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&units=metric&appid=${APP_ID}`)
